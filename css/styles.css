@@ -1,0 +1,225 @@
+/* Font Setup */
+@font-face {
+    font-family: 'League Spartan';
+    src: url('../assets/fonts/LeagueSpartan-VariableFont_wght.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    padding-top: 100px; /* Adjust this value based on your header height */
+}
+
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'League Spartan', sans-serif;
+}
+
+/* Header and Navbar */
+header {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #f8f8f8;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+header img {
+    width: 250px;
+    height: auto;
+    margin-right: 15px;
+}
+
+nav {
+    display: flex;
+    margin-left: auto;
+    flex-grow: 1;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+nav ul li {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.navbar-button {
+    text-decoration: none;
+    color: #333;
+    padding: 5px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+/* ▼ Dropdown Indicator Styling */
+.dropdown-toggle-btn {
+    background: transparent;
+    border: none;
+    color: #333; /* Matches the navbar link color */
+    font-weight: bold;
+    font-size: 14px;
+    padding: 0; /* Remove padding to keep alignment */
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    margin-left: -5px; /* Slight spacing from the main nav item */
+    margin-top: -1px;
+}
+
+/* Remove outline on focus */
+.dropdown-toggle-btn:focus {
+    outline: none;
+}
+
+/* Add hover effect to match navbar links */
+.dropdown-toggle-btn:hover,
+.dropdown-toggle-btn.active {
+    color: #555; /* Slight color change on hover for better UI feedback */
+}
+
+.navbar-button:hover {
+    background-color: none; /* Change background color on hover */
+    color: black;            /* Change text color on hover */
+}
+
+/* Dropdown Button Styling */
+.dropdown-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    color: #333;
+    padding-left: 5px;
+    display: inline-flex;
+    align-items: center;
+    font-weight: bold;
+}
+
+/* Remove outline on focus */
+.dropdown-button:focus {
+    outline: none;
+}
+
+/* Dropdown Menu Styling */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 0;
+    background-color: #f8f8f8;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+.dropdown-content li {
+    padding: 5px 10px;
+}
+
+.dropdown-content li a {
+    color: #333;
+    font-size: 12px;
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Show dropdown on hover */
+nav ul li:hover .dropdown-content {
+    display: block;
+}
+
+/* Social Icons Styling */
+.social-icons {
+    display: flex;
+    margin-left: auto;
+    gap: 5px;
+    flex-grow: 0;
+}
+
+.social-icons img {
+    width: 24px;
+    height: auto;
+    transition: transform 0.3s;
+}
+
+.social-icons img:hover {
+    filter: brightness(0) saturate(100%) invert(17%) sepia(95%) saturate(5156%) hue-rotate(188deg) brightness(120%) contrast(100%);
+}
+
+/* Newsletter Input Styles */
+.newsletter-form {
+    display: flex; /* Use flexbox to align the input and button */
+}
+
+.newsletter-input {
+    flex: 1; /* Allow the input to take available space */
+    border: none; /* Remove all borders */
+    border-bottom: 3px solid black; /* Add black line border only underneath */
+    padding: 10px; /* Adjust padding for a better look */
+    outline: none; /* Remove outline on focus */
+    margin-right: -5px; /* Adjust margin to fuse input and button together */
+}
+
+/* Remove border when input is focused */
+.newsletter-input:focus {
+    border: none; /* Ensure no border shows when focused */
+    border-bottom: 3px solid black; /* Add black line border only underneath */
+}
+
+/* Newsletter Submit Button Styles */
+.newsletter-submit-button {
+    border: 3px solid black; /* Black border with 3px thickness */
+    background-color: transparent; /* Transparent background */
+    color: black; /* Black text color */
+    padding: 10px 15px; /* Add padding for a better look */
+    margin-left: -0px; /* Adjust margin to fuse input and button together */
+    cursor: pointer; /* Change cursor on hover */
+}
+
+/* Optional: Add hover effect for the button */
+.newsletter-submit-button:hover {
+    background-color: black; /* Change background on hover */
+    color: white; /* Change text color on hover */
+}
+
+.list-unstyled a {
+    color: black;
+    text-decoration: none; /* Removes the underline if you don't want it */
+}
+
+.list-unstyled a:hover {
+    color: skyblue; /* Ensures the color remains black on hover */
+    text-decoration: underline; /* Optional: underline on hover if desired */
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+    }
+
+    nav {
+        margin-top: 10px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
