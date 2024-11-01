@@ -1,21 +1,106 @@
 /* Font Setup */
 @font-face {
     font-family: 'League Spartan';
-    src: url('../assets/fonts/LeagueSpartan-VariableFont_wght.ttf') format('truetype');
+    src: url('../assets/LeagueSpartan-VariableFont_wght.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 
-body {
-    padding-top: 100px; /* Adjust this value based on your header height */
+/* Basic Setting */
+html {
+    background-color: black;
 }
 
-/* Basic Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'League Spartan', sans-serif;
+}
+
+/* Body Styling */
+body {
+    background-color: black;
+}
+
+main {
+    padding-top: 80px;
+    padding-bottom: 10px;
+    background-color: #e8e8e8;
+}
+
+.main-container {
+    background-color: #ffffff;
+    margin: 20px;
+    border: 1px solid #ccc;
+    padding: 20px;
+}
+
+.introduction-text {
+    margin-left: 250px;
+    margin-right: 250px;
+}
+
+.introduction-image {
+    margin-left: 150px;
+    margin-right: 150px;
+    border-radius: 15px;
+    filter: grayscale(100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.introduction-image::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 8%;
+    background: linear-gradient(to top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+}
+
+/* Button Styling */
+.btn-introduction,
+.btn-carousel,
+.newsletter-submit-button {
+    border: 3px solid black;
+    background-color: transparent;
+    color: black;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.btn-introduction:hover,
+.btn-carousel:hover,
+.newsletter-submit-button:hover {
+    background-color: black;
+    color: white;
+    outline: none;
+    box-shadow: none;
+}
+
+.btn-introduction:focus,
+.btn-carousel:focus,
+.newsletter-submit-button:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.text-center.my-4 {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 40px 0;
+}
+
+.text-center.my-4::before,
+.text-center.my-4::after {
+    content: "";
+    flex: 1;
+    border-bottom: 1px solid #ccc;
+    margin: 0 20px;
 }
 
 /* Header and Navbar */
@@ -28,7 +113,7 @@ header {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
+    width: calc(100%);
     z-index: 1000;
 }
 
@@ -70,31 +155,28 @@ nav ul li {
 .dropdown-toggle-btn {
     background: transparent;
     border: none;
-    color: #333; /* Matches the navbar link color */
+    color: #333;
     font-weight: bold;
     font-size: 14px;
-    padding: 0; /* Remove padding to keep alignment */
+    padding: 0;
     cursor: pointer;
     display: inline-flex;
     align-items: center;
-    margin-left: -5px; /* Slight spacing from the main nav item */
+    margin-left: -5px;
     margin-top: -1px;
 }
 
-/* Remove outline on focus */
 .dropdown-toggle-btn:focus {
     outline: none;
 }
 
-/* Add hover effect to match navbar links */
 .dropdown-toggle-btn:hover,
 .dropdown-toggle-btn.active {
-    color: #555; /* Slight color change on hover for better UI feedback */
+    color: #555;
 }
 
 .navbar-button:hover {
-    background-color: none; /* Change background color on hover */
-    color: black;            /* Change text color on hover */
+    color: black;
 }
 
 /* Dropdown Button Styling */
@@ -110,7 +192,6 @@ nav ul li {
     font-weight: bold;
 }
 
-/* Remove outline on focus */
 .dropdown-button:focus {
     outline: none;
 }
@@ -139,7 +220,6 @@ nav ul li {
     box-sizing: border-box;
 }
 
-/* Show dropdown on hover */
 nav ul li:hover .dropdown-content {
     display: block;
 }
@@ -162,50 +242,81 @@ nav ul li:hover .dropdown-content {
     filter: brightness(0) saturate(100%) invert(17%) sepia(95%) saturate(5156%) hue-rotate(188deg) brightness(120%) contrast(100%);
 }
 
+/* Carousel Styling */
+.carousel-item {
+    display: flex;
+    height: 600px;
+}
+
+.carousel-image-container {
+    position: relative;
+    width: 50%;
+    height: 100%;
+}
+
+.carousel-image-container img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.steve-running {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 150px;
+    height: auto;
+    z-index: 2;
+}
+
+.carousel-text-container {
+    width: 50%;
+    padding: 20px;
+    margin: 0 80px;
+    display: flex;
+    flex-direction: column;
+    color: #333;
+    background-color: #ffffff;
+}
+
+.carousel-text-container h3 {
+    text-align: center;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.carousel-text-container p {
+    text-align: left;
+    font-size: 22px;
+}
+
 /* Newsletter Input Styles */
 .newsletter-form {
-    display: flex; /* Use flexbox to align the input and button */
+    display: flex;
 }
 
 .newsletter-input {
-    flex: 1; /* Allow the input to take available space */
-    border: none; /* Remove all borders */
-    border-bottom: 3px solid black; /* Add black line border only underneath */
-    padding: 10px; /* Adjust padding for a better look */
-    outline: none; /* Remove outline on focus */
-    margin-right: -5px; /* Adjust margin to fuse input and button together */
+    flex: 1;
+    border: none;
+    border-bottom: 3px solid black;
+    padding: 10px;
+    outline: none;
+    margin-right: -5px;
 }
 
-/* Remove border when input is focused */
 .newsletter-input:focus {
-    border: none; /* Ensure no border shows when focused */
-    border-bottom: 3px solid black; /* Add black line border only underneath */
-}
-
-/* Newsletter Submit Button Styles */
-.newsletter-submit-button {
-    border: 3px solid black; /* Black border with 3px thickness */
-    background-color: transparent; /* Transparent background */
-    color: black; /* Black text color */
-    padding: 10px 15px; /* Add padding for a better look */
-    margin-left: -0px; /* Adjust margin to fuse input and button together */
-    cursor: pointer; /* Change cursor on hover */
-}
-
-/* Optional: Add hover effect for the button */
-.newsletter-submit-button:hover {
-    background-color: black; /* Change background on hover */
-    color: white; /* Change text color on hover */
+    border-bottom: 3px solid black;
 }
 
 .list-unstyled a {
     color: black;
-    text-decoration: none; /* Removes the underline if you don't want it */
+    text-decoration: none;
 }
 
 .list-unstyled a:hover {
-    color: skyblue; /* Ensures the color remains black on hover */
-    text-decoration: underline; /* Optional: underline on hover if desired */
+    color: skyblue;
+    text-decoration: underline;
 }
 
 /* Responsive Styling */
@@ -221,5 +332,17 @@ nav ul li:hover .dropdown-content {
     nav ul {
         flex-direction: column;
         gap: 10px;
+    }
+
+    .carousel-item {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .carousel-image-container,
+    .carousel-text-container {
+        width: 100%;
+        height: auto;
+        margin: 0;
     }
 }
